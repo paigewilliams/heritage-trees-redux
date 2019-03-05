@@ -4,9 +4,10 @@
   "description": "app to try google maps with react",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server",
-    "lint": "eslint src/** src/**/**; exit 0"
+    "start": "webpack-dev-server --hot --mode development",
+    "lint": "eslint src/** src/**/**; exit 0",
+    "lint-fix": "eslint src/** src/**/** --fix; exit 0",
+    "test": "jest; exit 0"
   },
   "author": "paige williams && devin sweeting",
   "license": "ISC",
@@ -25,15 +26,20 @@
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.3.1",
     "@babel/preset-react": "^7.0.0",
+    "babel-jest": "^24.1.0",
     "babel-loader": "^8.0.5",
     "babel-plugin-styled-components": "^1.10.0",
     "eslint": "^5.13.0",
+    "eslint-loader": "^2.1.2",
     "eslint-plugin-react": "^7.12.4",
     "file-loader": "^1.1.6",
     "html-webpack-plugin": "^2.29.0",
+    "jest": "^24.1.0",
     "react-hot-loader": "^3.0.0-beta.7",
+    "react-test-renderer": "^16.8.3",
     "url-loader": "^0.6.2",
-    "webpack": "^3.4.0",
-    "webpack-dev-server": "^2.5.0"
+    "webpack": "^4.29.3",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.1.14"
   }
 }

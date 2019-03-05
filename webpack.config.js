@@ -33,14 +33,15 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
-        loader: "babel-loader",
+        test: /\.(js|jsx)$/,
+        enforce: 'pre',
         exclude: /node_modules/,
-        options: {
-          plugins: [
-            "react-hot-loader/babel"
-          ]
-        }
+        use: ['eslint-loader']
+      },
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: ['babel-loader']
       },
       {
         test: /\.(png|gif|jp(e*)g|svg)$/,

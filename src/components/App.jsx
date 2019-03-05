@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 import Map from './Map';
 import { Switch, Route } from 'react-router';
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 
 const GlobalStyles = createGlobalStyle`
@@ -21,16 +21,16 @@ class App extends React.Component{
   }
 
   handleApiRequest(){
-    const url = `https://opendata.arcgis.com/datasets/fd1d618ac3174ad5be730524a4dd778e_26.geojson`;
+    const url = 'https://opendata.arcgis.com/datasets/fd1d618ac3174ad5be730524a4dd778e_26.geojson';
     fetch(url)
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data.features)
-      const newTreeData = data.features;
-      this.setState({
-        treeData: newTreeData
-      })
-    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data.features);
+        const newTreeData = data.features;
+        this.setState({
+          treeData: newTreeData
+        });
+      });
   }
 
   componentDidMount(){
